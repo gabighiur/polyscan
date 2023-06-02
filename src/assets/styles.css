@@ -1,0 +1,183 @@
+/* Import the Montserrat font */
+@font-face {
+    font-family: 'ModeSeven';
+    src: url('../assets/fonts/Modeseven-L3n5.ttf') format('truetype');
+}
+
+
+
+
+html,
+body {
+    font-family: 'ModeSeven', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.app {
+    background: #27082B;
+    color: #67c4a5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: -40;
+    width: 100%;
+    background-color: transparent;
+    color: #fff;
+    padding: 0.2rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 9999;
+}
+
+.navbar-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 15px;
+}
+
+.logo {
+    width: 120px; /* Adjust the size as needed */
+    height: 120px; /* Adjust the size as needed */
+}
+
+.invite-button {
+    background-color: #67c4a5;
+    color: #fff;
+    border: none;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    margin-left: 1rem;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.hamburger {
+    display: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.hamburger-line {
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: #fff;
+    margin: 5px;
+}
+
+.header {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 100px); /* Adjust the height to leave space for the navbar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-video {
+    max-width: 90%; /* Adjust the width as needed */
+    height: auto; /* Let the height adjust automatically */
+    object-fit: cover;
+}
+section {
+    display: grid;
+    place-items: center;
+    align-content: center;
+    min-height: 100vh;
+    opacity:1;
+    filter: blur(0);
+    transform:translateX(0);
+   
+}
+.container h1 {
+    font-size: 40px;
+    line-height:1.5;
+    margin-bottom: 20px;
+}
+
+.container p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 10px
+}
+
+.container button {
+    background-color: #67c4a5;
+    color: #fff;
+    border: hidden;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+    .container button:hover {
+        background-color: #56b395;
+    }
+
+div#loom-companion-mv3 {
+    display: none;
+}
+
+.image {
+    width: 400px;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.footer {
+    background-color: transparent;
+    padding: 50px;
+    text-align: center;
+}
+
+.footer-logo {
+    width: 70px;
+    height: 70px;
+}
+section.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+
+section.visible {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+@media only screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) {
+    .header {
+        height: calc(100vh - 90px);
+    }
+
+    section {
+        min-height: calc(100vh - 30px);
+    }
+
+    .container {
+        max-width: 60%;
+    }
+
+    .image {
+        width: 140%;
+        height: auto;
+        max-width: 400px;
+        margin-top: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+}
+  
