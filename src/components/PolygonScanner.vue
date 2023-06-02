@@ -6,7 +6,12 @@
                 <a href="https://discord.com/api/oauth2/authorize?client_id=1041454438595965049&permissions=2147534848&scope=bot%20applications.commands"
                    target="_blank"
                    rel="noopener noreferrer">
-                    <button class="invite-button">Invite me</button>
+                    <button class="invite-button">Invite</button>
+                </a>
+                <a href="https://upgrade.chat/ovoono-studio/p/ovodonator"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <button class="invite-button">Donate</button>
                 </a>
             </div>
             <button class="hamburger" @click="toggleMenu">
@@ -26,12 +31,10 @@
                     <div class="custom-list-item">
                         <img class="list-icon" src="../assets/logo.png" alt="Logo" />
                         <p>{{ section1Text1 }}</p>
-                        <img class="image" :src="section1Image1" alt="Token Update" />
                     </div>
                     <div class="custom-list-item">
                         <img class="list-icon" src="../assets/logo.png" alt="Logo" />
                         <p>{{ section1Text2 }}</p>
-                        <img class="image" :src="section1Image2" alt="Price Alert" />
                     </div>
                     <div class="custom-list-item">
                         <img class="list-icon" src="../assets/logo.png" alt="Logo" />
