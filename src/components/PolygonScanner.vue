@@ -2,7 +2,7 @@
     <div class="app">
         <nav class="navbar">
             <div class="navbar-content">
-                <img class="logo" :src="logo" alt="Logo" />
+                <img class="logo" :src="LogoNav" alt="Logo" />
                 <a href="https://discord.com/api/oauth2/authorize?client_id=1041454438595965049&permissions=2147534848&scope=bot%20applications.commands"
                    target="_blank"
                    rel="noopener noreferrer">
@@ -22,7 +22,7 @@
         </nav>
 
         <div class="header">
-            <video class="header-video" src="../assets/hi1.mp4" autoplay loop muted></video>
+            <video class="header-video" :src="videoHeader" autoplay loop muted></video>
         </div>
         <div class="header-content">
             <div class="info-container">
@@ -31,27 +31,28 @@
                 </h2>
             </div>
             <div class="hero-container">
-                <a href="https://upgrade.chat/ovoono-studio/p/ovodonator" target="_blank" rel="noopener noreferrer">
+                <a href="https://upgrade.chat/ovoono-studio/p/ovodonator"
+                   target="_blank"
+                   rel="noopener noreferrer">
                     <button class="invite-button">Donate</button>
                 </a>
             </div>
         </div>
-       
 
         <section class="hidden" ref="section1">
             <div class="container">
                 <h1>{{ section1Title }}</h1>
                 <div>
                     <div class="custom-list-item">
-                        <img class="list-icon" src="../assets/logo.png" alt="Logo" />
+                        <img class="list-icon" :src="icon" alt="Logo" />
                         <p>{{ section1Text1 }}</p>
                     </div>
                     <div class="custom-list-item">
-                        <img class="list-icon" src="../assets/logo.png" alt="Logo" />
+                        <img class="list-icon" :src="icon" alt="Logo" />
                         <p>{{ section1Text2 }}</p>
                     </div>
                     <div class="custom-list-item">
-                        <img class="list-icon" src="../assets/logo.png" alt="Logo" />
+                        <img class="list-icon" :src="icon" alt="Logo" />
                         <p>{{ section1Text3 }}</p>
                     </div>
                 </div>
@@ -63,7 +64,7 @@
                 <h1>{{ section2Title }}</h1>
                 <div>
                     <div class="custom-list-item">
-                        <img class="list-icon" src="../assets/logo.png" alt="Logo" />
+                        <img class="list-icon" :src="icon" alt="Logo" />
                         <p>
                             <a href="https://discord.com/api/oauth2/authorize?client_id=1041454438595965049&permissions=2147534848&scope=bot%20applications.commands"
                                target="_blank"
@@ -74,11 +75,11 @@
                         </p>
                     </div>
                     <div class="custom-list-item">
-                        <img class="list-icon" src="../assets/logo.png" alt="Logo" />
+                        <img class="list-icon" :src="icon" alt="Logo" />
                         <p>{{ section2Text1 }}</p>
                     </div>
                     <div class="custom-list-item">
-                        <img class="list-icon" src="../assets/logo.png" alt="Logo" />
+                        <img class="list-icon" :src="icon" alt="Logo" />
                         <p>{{ section2Text2 }}</p>
                     </div>
                 </div>
@@ -87,7 +88,7 @@
 
         <footer class="footer">
             <div class="footer-content">
-                <img class="footer-logo" src="../assets/logoovo.png" alt="Logo" />
+                <img class="footer-logo" :src="FLogo" alt="Logo" />
                 <p>Powered By <a href="https://ovoono.studio/" target="_blank">OvoOno Studio</a></p>
             </div>
         </footer>
@@ -95,20 +96,22 @@
 </template>
 
 <script>
-    import Image1 from '@/assets/tokenUpdate.png';
-    import Image2 from '@/assets/priceAlert.png';
-    import Logo from '@/assets/logo2.png'
+import vid from '@/assets/hi1.mp4'
+import LogoNav from '@/assets/logo2.png';
+import FLogo from '@/assets/logoovo.png';
+import icon from '@/assets/logo.png';
 
 export default {
   name: 'App',
   data() {
     return {
-      logo: Logo,
+      LogoNav: LogoNav,
+      FLogo: FLogo,
+      icon: icon,
+      videoHeader: vid,
       section1Title: 'What can I offer?',
       section1Text1: 'Effortlessly monitor the value of your Ethereum and Polygon tokens.',
-      section1Image1: Image1,
       section1Text2: 'Set customized price alerts to stay informed.',
-      section1Image2: Image2,
       section1Text3: 'Stay updated on the latest market trends.',
       section2Title: 'How to use my services?',
       section2Text1: 'Utilize the ps- prefix for commands. For example, try ps-help',
@@ -130,15 +133,14 @@ export default {
       });
     },
   },
-        mounted() {
+  mounted() {
+    const isMobile = window.innerWidth <= 768;
+    const threshold = isMobile ? 0.03 : 0.3;
 
-      const isMobile = window.innerWidth <= 768;
-      const threshold = isMobile ? 0.03 : 0.3;
-
-      const observer = new IntersectionObserver(this.handleScrollAnimations, {
-          root: null,
-          rootMargin: '0px',
-          threshold: threshold, // Adjust this threshold as needed
+    const observer = new IntersectionObserver(this.handleScrollAnimations, {
+      root: null,
+      rootMargin: '0px',
+      threshold: threshold, // Adjust this threshold as needed
     });
 
     const section1 = this.$refs.section1;
@@ -152,23 +154,4 @@ export default {
 
 <style scoped>
     @import '../assets/styles.css';
-
-    @media (max-width: 768px) {
-        .navbar-links {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
-            padding: 10px 0;
-            background-color: #27082B;
-            text-align: center;
-            z-index: 999;
-        }
-
-        .show-mobile-menu .navbar-links {
-            display: block;
-        }
-    }
-
 </style>
