@@ -165,19 +165,30 @@ section.visible {
     }
 
     section {
-        min-height: calc(100vh - 30px);
+        min-height: calc(100vh - 90px);
     }
 
     .container {
-        max-width: 60%;
+        max-width: 100%;
     }
 
     .image {
-        width: 140%;
+        width: 100%;
         height: auto;
-        max-width: 400px;
+        max-width: 200px;
         margin-top: 20px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 10px 6px rgba(0, 2, 0, 0.2);
     }
+}
+.custom-list-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.list-icon {
+    width: 20px; /* Adjust the size as needed */
+    height: 20px; /* Adjust the size as needed */
+    margin-right: 10px;
 }
   

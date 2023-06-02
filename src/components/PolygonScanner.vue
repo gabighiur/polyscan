@@ -22,27 +22,31 @@
         <section class="hidden" ref="section1">
             <div class="container">
                 <h1>{{ section1Title }}</h1>
-                <ul>
-                    <li>
+                <div>
+                    <div class="custom-list-item">
+                        <img class="list-icon" src="../assets/logo.png" alt="Logo" />
                         <p>{{ section1Text1 }}</p>
                         <img class="image" :src="section1Image1" alt="Token Update" />
-                    </li>
-                    <li>
+                    </div>
+                    <div class="custom-list-item">
+                        <img class="list-icon" src="../assets/logo.png" alt="Logo" />
                         <p>{{ section1Text2 }}</p>
                         <img class="image" :src="section1Image2" alt="Price Alert" />
-                    </li>
-                    <li>
+                    </div>
+                    <div class="custom-list-item">
+                        <img class="list-icon" src="../assets/logo.png" alt="Logo" />
                         <p>{{ section1Text3 }}</p>
-                    </li>
-                </ul>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section class="hidden" ref="section2">
             <div class="container">
                 <h1>{{ section2Title }}</h1>
-                <ul>
-                    <li>
+                <div>
+                    <div class="custom-list-item">
+                        <img class="list-icon" src="../assets/logo.png" alt="Logo" />
                         <p>
                             <a href="https://discord.com/api/oauth2/authorize?client_id=1041454438595965049&permissions=2147534848&scope=bot%20applications.commands"
                                target="_blank"
@@ -51,14 +55,16 @@
                             </a>
                             to your Discord server and unlock a world of possibilities.
                         </p>
-                    </li>
-                    <li>
+                    </div>
+                    <div class="custom-list-item">
+                        <img class="list-icon" src="../assets/logo.png" alt="Logo" />
                         <p>{{ section2Text1 }}</p>
-                    </li>
-                    <li>
+                    </div>
+                    <div class="custom-list-item">
+                        <img class="list-icon" src="../assets/logo.png" alt="Logo" />
                         <p>{{ section2Text2 }}</p>
-                    </li>
-                </ul>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -106,11 +112,15 @@ export default {
       });
     },
   },
-  mounted() {
-    const observer = new IntersectionObserver(this.handleScrollAnimations, {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.3, // Adjust this threshold as needed
+        mounted() {
+
+      const isMobile = window.innerWidth <= 768;
+      const threshold = isMobile ? 0.03 : 0.3;
+
+      const observer = new IntersectionObserver(this.handleScrollAnimations, {
+          root: null,
+          rootMargin: '0px',
+          threshold: threshold, // Adjust this threshold as needed
     });
 
     const section1 = this.$refs.section1;
