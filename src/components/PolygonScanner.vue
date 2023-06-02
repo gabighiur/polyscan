@@ -24,9 +24,18 @@
         <div class="header">
             <video class="header-video" src="../assets/hi1.mp4" autoplay loop muted></video>
         </div>
-        <h3>
-            OvoOno Studio Donator will available you extra features for each OvoBots.
-        </h3>
+        <div class="header-content">
+            <div class="info-container">
+                <h2>
+                    OvoDonator will give you access to all exclusive tools and features on existing OvoBots
+                </h2>
+            </div>
+            <div class="hero-container">
+                <a href="https://upgrade.chat/ovoono-studio/p/ovodonator" target="_blank" rel="noopener noreferrer">
+                    <button class="invite-button">Donate</button>
+                </a>
+            </div>
+        </div>
        
 
         <section class="hidden" ref="section1">
@@ -109,6 +118,7 @@ export default {
   methods: {
     toggleMenu() {
       // Implement the logic to toggle the mobile menu here
+      this.showMobileMenu = !this.showMobileMenu;
     },
     handleScrollAnimations(entries) {
       entries.forEach((entry) => {
@@ -143,6 +153,22 @@ export default {
 <style scoped>
     @import '../assets/styles.css';
 
-  
+    @media (max-width: 768px) {
+        .navbar-links {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            padding: 10px 0;
+            background-color: #27082B;
+            text-align: center;
+            z-index: 999;
+        }
+
+        .show-mobile-menu .navbar-links {
+            display: block;
+        }
+    }
 
 </style>
