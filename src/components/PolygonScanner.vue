@@ -20,9 +20,14 @@
                 <span class="hamburger-line"></span>
             </button>
         </nav>
+
         <div class="header">
             <video class="header-video" src="../assets/hi1.mp4" autoplay loop muted></video>
         </div>
+        <h3>
+            OvoOno Studio Donator will available you extra features for each OvoBots.
+        </h3>
+       
 
         <section class="hidden" ref="section1">
             <div class="container">
