@@ -23,19 +23,6 @@ body {
     align-items: center;
 }
 
-.navbar {
-    position: fixed;
-    top: 0;
-    left: -40;
-    width: 100%;
-    background-color: transparent;
-    color: #fff;
-    padding: 0.2rem;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    z-index: 9999;
-}
 
 .navbar-content {
     display: flex;
