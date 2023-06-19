@@ -3,9 +3,10 @@
     font-family: 'ModeSeven';
     src: url('../assets/fonts/Modeseven-L3n5.ttf') format('truetype');
 }
-
-
-
+@font-face {
+    font-family: 'Bebas';
+    src: url('../assets/fonts/BebasNeue-Regular.ttf') format('truetype');
+}
 
 html,
 body {
@@ -24,6 +25,31 @@ body {
 }
 
 
+
+
+.logo {
+    width: 120px; /* Adjust the size as needed */
+    height: 120px; /* Adjust the size as needed */
+    margin: 10px;
+}
+.navbar {
+    font-family: 'Bebas', sans-serif;
+    font-size: 26px;
+    margin: 10;
+    padding: 20;
+    position: fixed;
+    top: 0;
+    left: -40;
+    width: 100%;
+    background-color: transparent;
+    color: #fff;
+    padding: 0.2rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 9999;
+}
+
 .navbar-content {
     display: flex;
     align-items: center;
@@ -31,11 +57,32 @@ body {
     margin-right: 15px;
 }
 
-.logo {
-    width: 120px; /* Adjust the size as needed */
-    height: 120px; /* Adjust the size as needed */
-}
+    .navbar-content a {
+        text-decoration: none;
+        color: #67c4a5;
+        margin-right: 20px;
+        position: relative;
+    }
 
+        .navbar-content a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -3px;
+            width: 100%;
+            height: 2px;
+            background-color: #67c4a5;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .navbar-content a:hover::after {
+            transform: scaleX(1);
+        }
+.navbar.logo:hover {
+    cursor: pointer;
+    border-bottom: 2px solid #fff;
+}
 .invite-button {
     background-color: #67c4a5;
     color: #fff;
@@ -136,8 +183,8 @@ div#loom-companion-mv3 {
 }
 section.hidden {
     opacity: 0;
-    filter: blur(5px);
-    transform: translateX(-100%);
+    filter: blur(10px);
+    transform: translateX(-80%);
     transition: all 1s;
 }
 
@@ -226,5 +273,15 @@ h2 {
 
 .info-container {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
+
+    .info-container.img {
+        display: block;
+        margin: 0 auto;
+    }
 

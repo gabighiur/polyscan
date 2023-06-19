@@ -1,20 +1,22 @@
 <template>
     <div class="app">
-        <nav class="navbar">
+        <nav class="navbar" :class="{ 'show-mobile-menu': showMobileMenu }">
             <div class="navbar-content">
-                <img class="logo" :src="LogoNav" alt="Logo" />
+                <img class="logo" :src="LogoNav" alt="Logo" @click="scrollToTop" />
                 <a href="https://discord.com/api/oauth2/authorize?client_id=1041454438595965049&permissions=2147534848&scope=bot%20applications.commands"
                    target="_blank"
                    rel="noopener noreferrer">
-                    <button class="invite-button">Invite</button>
+                    Invite
                 </a>
                 <a href="https://upgrade.chat/ovoono-studio/p/ovodonator"
                    target="_blank"
                    rel="noopener noreferrer">
-                    <button class="invite-button">Donate</button>
+                    Donate
                 </a>
+                <a href="https://top.gg/bot/1041454438595965049/vote?__cf_chl_tk=EH95WEe2Mhc7Vfz6DnJgWrZBVPUiWKJTGu_GBW8jtcQ-1686419311-0-gaNycGzNC9A" target="_blank" rel="noopener noreferrer">Vote</a>
+                <a href="https://top.gg/bot/1041454438595965049" target="_blank" rel="noopener noreferrer">Top GG</a>
             </div>
-            <button class="hamburger" @click="toggleMenu">
+            <button class="hamburger" :class="{ 'show-mobile-menu': showMobileMenu }" @click="toggleMenu">
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
@@ -22,10 +24,12 @@
         </nav>
 
         <div class="header">
-            <video class="header-video" :src="videoHeader" autoplay loop muted></video>
+            <video class="header-video" :src="vid" autoplay loop muted></video>
         </div>
+
         <div class="header-content">
             <div class="info-container">
+                <img :src="rage" alt="rage"/>
                 <h2>
                     OvoDonator will give you access to all exclusive tools and features on existing OvoBots
                 </h2>
@@ -86,6 +90,10 @@
             </div>
         </section>
 
+       
+        <CardComponent />
+
+
         <footer class="footer">
             <div class="footer-content">
                 <img class="footer-logo" :src="FLogo" alt="Logo" />
@@ -96,60 +104,74 @@
 </template>
 
 <script>
-import vid from '@/assets/hi1.mp4'
-import LogoNav from '@/assets/logo2.png';
-import FLogo from '@/assets/logoovo.png';
-import icon from '@/assets/logo.png';
+    import CardComponent from '@/components/CardComponent.vue';
+    import vid from '@/assets/hi1.webm';
+    import LogoNav from '@/assets/logo2.png';
+    import FLogo from '@/assets/logoovo.png';
+    import icon from '@/assets/logo.png';
+    import rage from '@/assets/jaluzele/rageEmote.png'
+    
+    export default {
+        name: 'App',
+        components: {
+            CardComponent
+        },
+        
 
-export default {
-  name: 'App',
-  data() {
-    return {
-      LogoNav: LogoNav,
-      FLogo: FLogo,
-      icon: icon,
-      videoHeader: vid,
-      section1Title: 'What can I offer?',
-      section1Text1: 'Effortlessly monitor the value of your Ethereum and Polygon tokens.',
-      section1Text2: 'Set customized price alerts to stay informed.',
-      section1Text3: 'Stay updated on the latest market trends.',
-      section2Title: 'How to use my services?',
-      section2Text1: 'Utilize the ps- prefix for commands. For example, try ps-help',
-      section2Text2: 'Enjoy the PolyganScan Scrapper features and consider supporting it by voting.',
+        data() {
+            return {
+                LogoNav: LogoNav,
+                FLogo: FLogo,
+                vid: vid,
+                icon: icon,
+                rage: rage,
+                section1Title: 'Discover the Exclusive Features',
+                section1Text1: 'Effortlessly monitor the value of your Ethereum and Polygon tokens.',
+                section1Text2: 'Set customized price alerts to stay informed.',
+                section1Text3: 'Stay updated on the latest market trends.',
+                section2Title: 'How to use my services?',
+                section2Text1: 'Utilize the ps- prefix for commands. For example, try ps-help',
+                section2Text2: 'Enjoy the PolygonScan Scrapper features and consider supporting it by voting.',
+                
+            };
+        },
+        methods: {
+            scrollToTop() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            },
+            toggleMenu() {
+                this.showMobileMenu = !this.showMobileMenu;
+            },
+            handleScrollAnimations(entries) {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    } else {
+                        entry.target.classList.remove('visible');
+                    }
+                });
+            },
+        },
+        mounted() {
+            const isMobile = window.innerWidth <= 768;
+            const threshold = isMobile ? 0.01 : 0.01;
+
+            const observer = new IntersectionObserver(this.handleScrollAnimations, {
+                root: null,
+                rootMargin: '0px',
+                threshold: threshold,
+            });
+
+            const section1 = this.$refs.section1;
+            const section2 = this.$refs.section2;
+            
+
+            observer.observe(section1);
+            observer.observe(section2);
+            
+        },
+
     };
-  },
-  methods: {
-    toggleMenu() {
-      // Implement the logic to toggle the mobile menu here
-      this.showMobileMenu = !this.showMobileMenu;
-    },
-    handleScrollAnimations(entries) {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        } else {
-          entry.target.classList.remove('visible');
-        }
-      });
-    },
-  },
-  mounted() {
-    const isMobile = window.innerWidth <= 768;
-    const threshold = isMobile ? 0.03 : 0.3;
-
-    const observer = new IntersectionObserver(this.handleScrollAnimations, {
-      root: null,
-      rootMargin: '0px',
-      threshold: threshold, // Adjust this threshold as needed
-    });
-
-    const section1 = this.$refs.section1;
-    const section2 = this.$refs.section2;
-
-    observer.observe(section1);
-    observer.observe(section2);
-  },
-};
 </script>
 
 <style scoped>

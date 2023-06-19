@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\src",
+    "\\src\\assets",
+    "\\src\\components"
   ],
-  "SelectedNode": "\\C:\\D\\Vue\\polyscan",
+  "SelectedNode": "\\src\\components\\PolygonScanner.vue",
   "PreviewInSolutionExplorer": false
 }
