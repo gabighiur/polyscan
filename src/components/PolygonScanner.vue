@@ -8,10 +8,10 @@
                    rel="noopener noreferrer">
                     Invite
                 </a>
-                <a href="https://upgrade.chat/ovoono-studio/p/ovodonator"
+                <a href="https://www.buymeacoffee.com/bezmir/membership"
                    target="_blank"
                    rel="noopener noreferrer">
-                    Donate
+                    Coffee
                 </a>
                 <a href="https://top.gg/bot/1041454438595965049/vote?__cf_chl_tk=EH95WEe2Mhc7Vfz6DnJgWrZBVPUiWKJTGu_GBW8jtcQ-1686419311-0-gaNycGzNC9A" target="_blank" rel="noopener noreferrer">Vote</a>
                 <a href="https://top.gg/bot/1041454438595965049" target="_blank" rel="noopener noreferrer">Top GG</a>
