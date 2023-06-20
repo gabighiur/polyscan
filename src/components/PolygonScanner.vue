@@ -31,14 +31,14 @@
             <div class="info-container">
                 <img :src="rage" alt="rage"/>
                 <h2>
-                    OvoDonator will give you access to all exclusive tools and features on existing OvoBots
+                   {{coffee}} 
                 </h2>
             </div>
             <div class="hero-container">
-                <a href="https://upgrade.chat/ovoono-studio/p/ovodonator"
+                <a href="https://www.buymeacoffee.com/bezmir/membership"
                    target="_blank"
                    rel="noopener noreferrer">
-                    <button class="invite-button">Donate</button>
+                    <button class="invite-button"><img class="coffee" :src="coffeeImg" /></button>
                 </a>
             </div>
         </div>
@@ -73,9 +73,9 @@
                             <a href="https://discord.com/api/oauth2/authorize?client_id=1041454438595965049&permissions=2147534848&scope=bot%20applications.commands"
                                target="_blank"
                                rel="noopener noreferrer">
-                                <button class="invite-button">Invite me</button>
+                                Invite
                             </a>
-                            to your Discord server and unlock a world of possibilities.
+                             me to your Discord server and unlock a world of possibilities.
                         </p>
                     </div>
                     <div class="custom-list-item">
@@ -110,6 +110,7 @@
     import FLogo from '@/assets/logoovo.png';
     import icon from '@/assets/logo.png';
     import rage from '@/assets/jaluzele/rageEmote.png'
+    import coffeeImg from '@/assets/jaluzele/cofee.png'
     
     export default {
         name: 'App',
@@ -125,6 +126,8 @@
                 vid: vid,
                 icon: icon,
                 rage: rage,
+                coffeeImg: coffeeImg,
+                coffee: 'Buy me a  coffee and unlock RAGEMODE',
                 section1Title: 'Discover the Exclusive Features',
                 section1Text1: 'Effortlessly monitor the value of your Ethereum and Polygon tokens.',
                 section1Text2: 'Set customized price alerts to stay informed.',

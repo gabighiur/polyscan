@@ -3,8 +3,8 @@
     "",
     "\\src",
     "\\src\\assets",
+    "\\src\\assets\\jaluzele",
     "\\src\\components"
   ],
-  "SelectedNode": "\\src\\components\\PolygonScanner.vue",
   "PreviewInSolutionExplorer": false
 }

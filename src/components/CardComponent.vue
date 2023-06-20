@@ -31,7 +31,7 @@ export default {
         {
           id: 1,
           image: require('@/assets/null.png'),
-          name: 'NullofGeneva',
+          name: 'NullofGehenna',
           designation: 'Blockchain Researcher',
           comment: '"Polygon Bot has transformed how I manage my crypto investments. It simplifies tracking and provides timely alerts."'
         },
@@ -40,14 +40,14 @@ export default {
           image: require('@/assets/popeye.png'),
           name: 'Popeye',
           designation: 'Crypto Enthusiast',
-          comment: '"I love using Polygon Bot on my Discord server. It\'s intuitive and integrates well with PolygonScan Scrapper."'
+            comment: '"I love using PolygonScan Web Scraper on my Discord server. It\'s intuitive and integrates well with my workflow, keeping me informed about blockchain data and price changes."'
         },
         {
           id: 3,
           image: require('@/assets/filip.png'),
           name: 'The Filip',
           designation: 'Blockchain Researcher',
-          comment: '"Choosing Polygon Bot was the best decision for my crypto journey. It offers unparalleled convenience and saves me time and effort."'
+            comment: '"My Discord Server can effortlessly monitor rewards and stay consistently informed. It has become an essential tool for me to stay on top of my earnings and make informed investment decisions"'
         }
       ]
     };
