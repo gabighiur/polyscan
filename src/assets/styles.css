@@ -29,17 +29,33 @@ a {
     font-weight: 400;
 }
 
-.coffee{
-    width:40px;
+
+.coffee {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.invite-button:hover .coffee {
+    transform: scale(1.15); 
+    background-color: #27082B; 
 }
 
 
 
 
 .logo {
-    width: 120px; /* Adjust the size as needed */
-    height: 120px; /* Adjust the size as needed */
+    width: 120px; 
+    height: 120px; 
     margin: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover{
+    transform: scale(1.15);
+    
 }
 .navbar {
     font-family: 'Bebas', sans-serif;
@@ -273,19 +289,19 @@ section.visible {
 h2 {
     font-size: 24px;
     font-weight: bold;
-    color: #67c4a5;
+    color: #27082B;
     margin-top: 20px;
     text-align: center;
 }
 button.invite-button {
     color: #67c4a5;
-    background-color: #27082B;
+    background-color: #67c4a5;
 }
 .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #27082B;
+    background-color: #67c4a5;
     padding: 20px;
     margin: 20px;
     border-radius: 40px;

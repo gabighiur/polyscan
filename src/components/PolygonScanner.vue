@@ -29,18 +29,20 @@
 
         <div class="header-content">
             <div class="info-container">
-                <img :src="rage" alt="rage"/>
+                <img :src="rage" alt="rage" />
                 <h2>
-                   {{coffee}} 
+                    {{coffee}}
                 </h2>
             </div>
             <div class="hero-container">
-                <a href="https://www.buymeacoffee.com/bezmir/membership"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    <button class="invite-button"><img class="coffee" :src="coffeeImg" /></button>
+                <a href="https://www.buymeacoffee.com/bezmir/membership" target="_blank" rel="noopener noreferrer">
+                    <button class="invite-button">
+                        <img class="coffee" :src="coffeeImg" alt="Coffee Icon" />
+                    </button>
                 </a>
             </div>
+
+
         </div>
 
         <section class="hidden" ref="section1">
@@ -59,10 +61,15 @@
                         <img class="list-icon" :src="icon" alt="Logo" />
                         <p>{{ section1Text3 }}</p>
                     </div>
+                    <div class="custom-list-item">
+                        <img class="list-icon" :src="icon" alt="Logo" />
+                        <p>{{ section1Text4 }}</p>
+                    </div>
                 </div>
             </div>
         </section>
-
+        
+      
         <section class="hidden" ref="section2">
             <div class="container">
                 <h1>{{ section2Title }}</h1>
@@ -75,7 +82,7 @@
                                rel="noopener noreferrer">
                                 Invite
                             </a>
-                             me to your Discord server and unlock a world of possibilities.
+                            me to your Discord server and unlock a world of possibilities.
                         </p>
                     </div>
                     <div class="custom-list-item">
@@ -90,7 +97,7 @@
             </div>
         </section>
 
-       
+
         <CardComponent />
 
 
@@ -105,17 +112,19 @@
 
 <script>
     import CardComponent from '@/components/CardComponent.vue';
-    import vid from '@/assets/hi1.webm';
+    import vid from '@/assets/logoanimation.mp4';
     import LogoNav from '@/assets/logo2.png';
     import FLogo from '@/assets/logoovo.png';
     import icon from '@/assets/logo.png';
-    import rage from '@/assets/jaluzele/rageEmote.png'
-    import coffeeImg from '@/assets/jaluzele/cofee.png'
+    import rage from '@/assets/jaluzele/rageEmote.png';
+    import coffeeImg from '@/assets/jaluzele/cofee.png';
+    
     
     export default {
         name: 'App',
         components: {
-            CardComponent
+            CardComponent,
+            
         },
         
 
@@ -132,6 +141,7 @@
                 section1Text1: 'Effortlessly monitor the value of your Ethereum and Polygon tokens.',
                 section1Text2: 'Set customized price alerts to stay informed.',
                 section1Text3: 'Stay updated on the latest market trends.',
+                section1Text4: 'Gwei Monitoring',
                 section2Title: 'How to use my services?',
                 section2Text1: 'Utilize the ps- prefix for commands. For example, try ps-help',
                 section2Text2: 'Enjoy the PolygonScan Scrapper features and consider supporting it by voting.',
