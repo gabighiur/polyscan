@@ -134,7 +134,7 @@ a {
     margin: 5px;
 }
 
-.header {
+header {
     position: relative;
     width: 100%;
     height: calc(100vh - 100px); /* Adjust the height to leave space for the navbar */
@@ -252,6 +252,26 @@ section.visible {
     }
 
    
+}
+/* Styles for desktop */
+@media (min-width: 769px) {
+    .header-text {
+        display: none; /* Hide header text on desktop */
+    }
+}
+
+/* Styles for mobile */
+@media (max-width: 768px) {
+    .video-container {
+        display: none; /* Hide video on mobile */
+    }
+
+    .header-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 }
 
 @media (max-width: 768px) {

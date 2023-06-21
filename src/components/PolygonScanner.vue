@@ -23,9 +23,17 @@
             </button>
         </nav>
 
-        <div class="header">
-            <video class="header-video" :src="vid" autoplay loop muted></video>
-        </div>
+
+      
+        <header>
+            <div class="video-container">
+                <video class="header-video" :src="vid" autoplay loop muted></video>
+                
+            </div>
+            <div class="header-text">
+                <h1>{{headerText}}</h1>
+            </div>
+        </header>
 
         <div class="header-content">
             <div class="info-container">
@@ -68,8 +76,8 @@
                 </div>
             </div>
         </section>
-        
-      
+
+
         <section class="hidden" ref="section2">
             <div class="container">
                 <h1>{{ section2Title }}</h1>
@@ -136,6 +144,7 @@
                 icon: icon,
                 rage: rage,
                 coffeeImg: coffeeImg,
+                headerText: 'Hei! I\'m PolygonScan Scrapper Bot',
                 coffee: 'Buy me a  coffee and unlock RAGEMODE',
                 section1Title: 'Discover the Exclusive Features',
                 section1Text1: 'Effortlessly monitor the value of your Ethereum and Polygon tokens.',
