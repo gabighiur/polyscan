@@ -3,9 +3,8 @@
     "",
     "\\src",
     "\\src\\assets",
-    "\\src\\assets\\swiper",
     "\\src\\components"
   ],
-  "SelectedNode": "\\src\\components\\PolygonScanner.vue",
+  "SelectedNode": "\\src\\components\\CardComponent.vue",
   "PreviewInSolutionExplorer": false
 }
