@@ -120,6 +120,7 @@
                 margin-left: 20px;
                 color: white;
                 text-decoration: none;
+                position: relative;
             }
 
                 .desktop-menu .menu-items a:before {
