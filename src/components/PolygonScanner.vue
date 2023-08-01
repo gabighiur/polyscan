@@ -7,30 +7,15 @@
             </div>
             <div class="header-text">
                 <span id="typewriter">{{ headerText }}</span>
-            </div>
+            </div> 
+        </header> 
 
-            <section class="bot-description">
-                <div id="container">
-                    <h1> PolygonScan Scrapper</h1>
-                    <p id="botdesc">{{ botDescription }}</p>
-                </div>
-            </section>
-        </header>
-
-        <div class="header-content">
-            <h2>{{ coffee }}</h2> 
-            <div class="info-container">
-                <img :src="rage" alt="rage" />
+        <section class="hidden" ref="section0">
+            <div class="container">
+                <h1> PolygonScan Scrapper</h1>
+                <p id="botdesc">{{ botDescription }}</p>
             </div>
-            <ul>
-                <li v-for="(item, index) in headerContentItems" :key="index">{{ item }}</li>
-                <li> <a :href="coffeeLink"><img :src="coffeeImg" /></a> </li>
-            </ul>
-            
-            <div class="hero-container">
-                
-            </div>
-        </div>
+        </section>
 
         <section class="hidden" ref="section1">
             <div class="container">
@@ -54,6 +39,17 @@
                     />
                 </div>
             </div>
+        </section>
+
+        <section class="header-content">
+            <h2>{{ coffee }}</h2> 
+            <div class="info-container">
+                <img :src="rage" alt="rage" />
+            </div>
+            <ul>
+                <li v-for="(item, index) in headerContentItems" :key="index">{{ item }}</li>
+                <li> <a :href="coffeeLink"><img :src="coffeeImg" /></a> </li>
+            </ul> 
         </section>
 
         <CardComponent />
@@ -150,11 +146,13 @@
                 threshold: this.threshold,
             });
 
+            const section0 = this.$refs.section0;
             const section1 = this.$refs.section1;
-            const section2 = this.$refs.section2;
+            const section2 = this.$refs.section2; 
 
+            observer.observe(section0);
             observer.observe(section1);
-            observer.observe(section2);
+            observer.observe(section2); 
 
             // Typewriter effect
             const headerText = document.getElementById("typewriter");

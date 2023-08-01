@@ -1,61 +1,73 @@
 <template>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4" v-for="testimonial in testimonials" :key="testimonial.id">
-                <div class="card">
-                    <div class="face front-face">
-                        <img :src="testimonial.image" alt="" class="profile">
-                        <div class="pt-3 text-uppercase name">
-                            {{ testimonial.name }}
+    <section id="card-component" class="visible" ref="section3">
+        <div class="container">
+            <h2>{{ title }}</h2>
+            <div class="row">
+                <div class="col-lg-4" v-for="testimonial in testimonials" :key="testimonial.id">
+                    <div class="card">
+                        <div class="face front-face">
+                            <img :src="testimonial.image" alt="" class="profile">
+                            <div class="pt-3 text-uppercase name">
+                                {{ testimonial.name }}
+                            </div>
+                            <div class="designation">{{ testimonial.designation }}</div>
                         </div>
-                        <div class="designation">{{ testimonial.designation }}</div>
-                    </div>
-                    <div class="face back-face">
-                        <span class="fas fa-quote-left"></span>
-                        <div class="testimonial">
-                            {{ testimonial.comment }}
+                        <div class="face back-face">
+                            <span class="fas fa-quote-left"></span>
+                            <div class="testimonial">
+                                {{ testimonial.comment }}
+                            </div>
+                            <span class="fas fa-quote-right"></span>
                         </div>
-                        <span class="fas fa-quote-right"></span>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      testimonials: [
-        {
-          id: 1,
-          image: require('@/assets/null.png'),
-          name: 'NullofGehenna',
-          designation: 'Blockchain Researcher',
-          comment: 'Polygon Bot has transformed how I manage my crypto investments. It simplifies tracking and provides timely alerts.'
-        },
-        {
-          id: 2,
-          image: require('@/assets/popeye.png'),
-          name: 'Popeye',
-          designation: 'Crypto Enthusiast',
-            comment: "It's intuitive and integrates well with my workflow, keeping me informed about blockchain data and price changes."
-        },
-        {
-          id: 3,
-          image: require('@/assets/filip.png'),
-          name: 'The Filip',
-          designation: 'Blockchain Researcher',
-            comment: 'It has become an essential tool to stay on top of earnings and make informed investment decisions'
-        }
-      ]
+        title: 'What other says',
+        testimonials: [
+            {
+            id: 1,
+            image: require('@/assets/null.png'),
+            name: 'NullofGehenna',
+            designation: 'Blockchain Researcher',
+            comment: 'Polygon Bot has transformed how I manage my crypto investments. It simplifies tracking and provides timely alerts.'
+            },
+            {
+            id: 2,
+            image: require('@/assets/popeye.png'),
+            name: 'Popeye',
+            designation: 'Crypto Enthusiast',
+                comment: "It's intuitive and integrates well with my workflow, keeping me informed about blockchain data and price changes."
+            },
+            {
+            id: 3,
+            image: require('@/assets/filip.png'),
+            name: 'The Filip',
+            designation: 'Blockchain Researcher',
+                comment: 'It has become an essential tool to stay on top of earnings and make informed investment decisions'
+            }
+        ]
     };
   }
 };
 </script>
 
 <style scoped>
+    #card-component .container {
+        width: unset;
+    }
+
+    #card-component .container h2 { 
+        text-align: center;
+    }
+
     .container {
         margin-top: 80px;
         font-family: 'Montserrat', sans-serif;
