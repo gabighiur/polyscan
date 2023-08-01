@@ -1,7 +1,6 @@
 <template>
     <div class="app">
         <NavBar />
-
         <header>
             <div class="video-container">
                 <video class="header-video" :src="vid" autoplay loop muted></video>
@@ -12,75 +11,47 @@
 
             <section class="bot-description">
                 <div id="container">
-                    <h1>What Can I Do?</h1>
+                    <h1> PolygonScan Scrapper</h1>
                     <p id="botdesc">{{ botDescription }}</p>
                 </div>
             </section>
         </header>
 
         <div class="header-content">
+            <h2>{{ coffee }}</h2> 
             <div class="info-container">
                 <img :src="rage" alt="rage" />
-                <h2>{{ coffee }}</h2>
             </div>
+            <ul>
+                <li v-for="(item, index) in headerContentItems" :key="index">{{ item }}</li>
+                <li> <a :href="coffeeLink"><img :src="coffeeImg" /></a> </li>
+            </ul>
+            
             <div class="hero-container">
-                <a href="https://www.buymeacoffee.com/bezmir/membership"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    <button class="invite-button">
-                        <img class="coffee" :src="coffeeImg" alt="Coffee Icon" />
-                    </button>
-                </a>
+                
             </div>
         </div>
 
         <section class="hidden" ref="section1">
             <div class="container">
-                <h1>{{ section1Title }}</h1>
+                <h2>{{ section1Title }}</h2>
                 <div>
-                    <div class="custom-list-item">
-                        <img class="list-icon" :src="icon" alt="Logo" />
-                        <p>{{ section1Text1 }}</p>
-                    </div>
-                    <div class="custom-list-item">
-                        <img class="list-icon" :src="icon" alt="Logo" />
-                        <p>{{ section1Text2 }}</p>
-                    </div>
-                    <div class="custom-list-item">
-                        <img class="list-icon" :src="icon" alt="Logo" />
-                        <p>{{ section1Text3 }}</p>
-                    </div>
-                    <div class="custom-list-item">
-                        <img class="list-icon" :src="icon" alt="Logo" />
-                        <p>{{ section1Text4 }}</p>
-                    </div>
+                    <CustomListItem v-for="(text, index) in section1Texts" :key="index" :text="text" :icon="icon" />
                 </div>
             </div>
         </section>
         
         <section class="hidden" ref="section2">
             <div class="container">
-                <h1>{{ section2Title }}</h1>
+                <h2>{{ section2Title }}</h2>
                 <div>
-                    <div class="custom-list-item">
-                        <img class="list-icon" :src="icon" alt="Logo" />
-                        <p>
-                            <a href="https://discord.com/api/oauth2/authorize?client_id=1041454438595965049&permissions=2147534848&scope=bot%20applications.commands"
-                               target="_blank"
-                               rel="noopener noreferrer">
-                                Invite
-                            </a>
-                            me to your Discord server and unlock a world of possibilities.
-                        </p>
-                    </div>
-                    <div class="custom-list-item">
-                        <img class="list-icon" :src="icon" alt="Logo" />
-                        <p>{{ section2Text1 }}</p>
-                    </div>
-                    <div class="custom-list-item">
-                        <img class="list-icon" :src="icon" alt="Logo" />
-                        <p>{{ section2Text2 }}</p>
-                    </div>
+                    <CustomListItem 
+                        v-for="(item, index) in section2Items" 
+                        :key="index" 
+                        :text="item.text" 
+                        :icon="icon"
+                        :link="item.link"
+                    />
                 </div>
             </div>
         </section>
@@ -103,14 +74,15 @@
     import LogoNav from "@/assets/logo2.png";
     import FLogo from "@/assets/logoovo.png";
     import icon from "@/assets/logo.png";
-    import rage from "@/assets/jaluzele/rageEmote.png";
-    import coffeeImg from "@/assets/jaluzele/cofee.png";
+    import rage from "@/assets/jaluzele/rageEmote.png"; 
+    import CustomListItem from "@/components/CustomListItem.vue";
 
     export default {
         name: "App",
         components: {
             NavBar,
             CardComponent,
+            CustomListItem
         },
         data() {
             return {
@@ -118,31 +90,64 @@
                 FLogo: FLogo,
                 vid: vid,
                 icon: icon,
-                rage: rage,
-                coffeeImg: coffeeImg,
+                rage: rage, 
                 headerText: "Hi!\nI'm PolygonScan\nScrapper Bot",
-                coffee: "Buy me a coffee and unlock RAGEMODE",
+                coffee: "PolygonScan Subscription Package",
+                coffeeImg: "https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=bezmir&button_colour=FFDD00&font_colour=000000&font_family=Poppins&outline_colour=000000&coffee_colour=ffffff",
+                coffeeLink: "https://www.buymeacoffee.com/bezmir",
+                headerContentItems: [
+                    "Access all commands",
+                    "TA signal for trading",
+                    "Algorithm based on MACD, RSI, ADX and BB",
+                    "Chart with 3 subplots included",
+                    "Sending signal every hour",
+                    "88% accurate",
+                    "Only 100 spots",
+                    "50$/monthly or 280$ annual payment",
+                ],
                 section1Title: "Discover the Exclusive Features",
-                section1Text1: "Effortlessly monitor the value of your Ethereum and Polygon tokens.",
-                section1Text2: "Set customized price alerts to stay informed.",
-                section1Text3: "Stay updated on the latest market trends.",
-                section1Text4: "Gwei Monitoring",
+                section1Texts: [
+                    "Effortlessly monitor the value of your Ethereum and Polygon tokens.",
+                    "Set customized price alerts to stay informed.",
+                    "Stay updated on the latest market trends.",
+                    "Gwei Monitoring",
+                    "Sending crypto signals as TA indicators such as MACD, RSI, BB and more",
+                ],
                 section2Title: "How to use my services?",
-                section2Text1: "Utilize the ps- prefix for commands. For example, try ps-help",
-                section2Text2: "Enjoy the PolygonScan Scrapper features and consider supporting it by voting.",
-                botDescription:
-                    "I can access blockchain data, monitor wallets, and receive real-time alerts. Upgrade for advanced features like exporting data and increased transaction limits.",
+                section2Items: [
+                    {
+                        text: "Invite me to your Discord server and unlock a world of possibilities.",
+                        link: "https://discord.com/api/oauth2/authorize?client_id=1041454438595965049&permissions=2147534848&scope=bot%20applications.commands"
+                    },
+                    {
+                        text: "Utilize the ps- prefix for commands. For example, try ps-help",
+                        link: null
+                    },
+                    {
+                        text: "Enjoy the PolygonScan Scrapper features and consider supporting it by voting.",
+                        link: null
+                    },
+                ],
+                botDescription: "I can access blockchain data, monitor wallets, and receive real-time alerts. Upgrade for advanced features like exporting data, increased transaction limits and receive Crypto Signals for daily trading.",
             };
+        },
+        computed: {
+            isMobile() {
+                return window.innerWidth <= 844;
+            },
+            rootMargin() {
+                return this.isMobile ? '0px' : '10px';
+            },
+            threshold() {
+                return this.isMobile ? 0.1 : 0.01;
+            },
         },
         mounted() {
             // Scroll animations
-            const isMobile = window.innerWidth <= 768;
-            const threshold = isMobile ? 0.01 : 0.01;
-
             const observer = new IntersectionObserver(this.handleScrollAnimations, {
                 root: null,
-                rootMargin: "0px",
-                threshold: threshold,
+                rootMargin: this.rootMargin,
+                threshold: this.threshold,
             });
 
             const section1 = this.$refs.section1;
@@ -174,7 +179,6 @@
             type();
         },
         methods: {
-           
             handleScrollAnimations(entries) {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
@@ -190,4 +194,18 @@
 
 <style scoped>
     @import '../assets/styles.css'; 
+    #typewriter {
+        animation: typewriter 4s steps(44) 1s 1 normal both,
+                   blinkTextCursor 500ms steps(44) infinite normal;
+    }
+
+    @keyframes typewriter {
+        from { width: 0; }
+        to { width: 100%; }
+    }
+
+    @keyframes blinkTextCursor {
+        from { border-right-color: rgba(255, 255, 255, .75); }
+        to { border-right-color: transparent; }
+    }
 </style>

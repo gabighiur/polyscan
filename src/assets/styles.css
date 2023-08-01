@@ -38,9 +38,7 @@ a {
 
 .invite-button:hover .coffee {
     transform: scale(1.15);
- 
 }
-
 
 .logo {
     width: 140px;
@@ -50,11 +48,9 @@ a {
     transition: transform 0.3s ease;
 }
 
-    .logo:hover {
-        transform: scale(1.15);
-    }
-
-
+.logo:hover {
+    transform: scale(1.15);
+}
 
 .invite-button {
     background-color: #67c4a5;
@@ -66,8 +62,6 @@ a {
     border-radius: 30px;
     transition: color 0.4s ease;
 }
-
-
 
 header {
     position: relative;
@@ -91,7 +85,7 @@ section {
     min-height: 60vh;
     opacity: 1;
     filter: blur(0);
-    transform: translateX(0);
+    transform: translateX(0); 
 }
 
 .bot-description {
@@ -103,7 +97,6 @@ section {
     margin-bottom: 20px;
 }
 
-
 .container h1 {
     font-size: 40px;
     line-height: 1.5;
@@ -112,9 +105,9 @@ section {
 
 .container p {
     font-size: 24px;
-    line-height: 1.5;
-    margin-bottom: 10px;
+    line-height: 1.5; 
 }
+
 #container{
    padding: 60px;
 }
@@ -135,9 +128,9 @@ section {
     transition: background-color 0.3s;
 }
 
-    .container button:hover {
-        background-color: #56b395;
-    }
+.container button:hover {
+    background-color: #56b395;
+}
 
 div#loom-companion-mv3 {
     display: none;
@@ -178,6 +171,17 @@ section.visible {
     max-width: 90%;
 }
 
+section h2, .header-content h2 {
+    color: #67c4a5;
+    text-align: left;
+    font-size: 35px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+section .container {
+    width: 860px;
+}
+
 @media only screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) {
     .header {
         height: calc(100vh - 90px);
@@ -186,6 +190,12 @@ section.visible {
     .header-content {
         padding: 40px;
         margin: 40px;
+        
+        margin-bottom: 0px!important;
+    }
+
+    .header-content h2 {
+        text-align: center;
     }
 
     section {
@@ -193,6 +203,10 @@ section.visible {
         margin-left: auto;
         margin-right: auto;
         max-width: 70%;
+    } 
+
+    section .container { 
+        width: 100%;
     }
 
     .container {
@@ -222,27 +236,29 @@ section.visible {
         display: none; 
     }
 
+    .header-content h2 {
+        text-align: center;
+    }
+
     #container {
         padding: 0px;
     }
 
-        #container h1 {
-            font-size: 40px;
-        }
+    #container h1 {
+        font-size: 40px;
+    }
 
     #botdesc {
         font-size: 20px;
     }
 
     .header-text {
-        color: #D3FFCA;
-        
+        color: #d3ffca;
         align-items: center;
-        margin-left: 50px;
-        width: 100%;
+        margin: 0 auto;
+        width: 80%;
     }
 
-  
     #typewriter {
         white-space: pre-line;
         font-size: 28px;
@@ -252,7 +268,6 @@ section.visible {
         border-right: 0.15em solid #fff; 
         animation: typewriter 1s steps(40) 1s infinite normal, blink-caret 0.75s step-end infinite;
     }
-  
 
     @keyframes typewriter {
         from {
@@ -275,27 +290,25 @@ section.visible {
     }
 }
 
+.custom-list-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
 
+.list-icon {
+    width: 20px; /* Adjust the size as needed */
+    height: 20px; /* Adjust the size as needed */
+    margin-right: 10px;
+}
 
-    .custom-list-item {
-        display: flex;
-        align-items: center;
-        margin-bottom: 20px;
-    }
-
-    .list-icon {
-        width: 20px; /* Adjust the size as needed */
-        height: 20px; /* Adjust the size as needed */
-        margin-right: 10px;
-    }
-
-    h2 {
-        font-size: 24px;
-        font-weight: bold;
-        color: #27082B;
-        margin-top: 20px;
-        text-align: center;
-    }
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #27082B;
+    margin-top: 20px;
+    text-align: center;
+}
 
 button.invite-button {
     color: #67c4a5;
@@ -306,29 +319,57 @@ button.invite-button {
 .header-content {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    background-color: #67c4a5;
-    padding: 20px;
+    align-items: center;  
     margin-bottom: 326px;
-    border-radius: 40px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 40px; 
     flex-direction: column;
+} 
+
+.header-content ul {
+    background: #67c4a5;
+    color: #122;
+    border-radius: 10px;
+    padding: 20px 30px;
+    font-size: 21px;
+    list-style: none;
+    text-transform: uppercase;
+    transition: all .3s;
+    margin-bottom: 40px;
 }
 
-    .info-container {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-    }
+.header-content:hover ul {
+    background: rgb(119, 16, 133);
+}
 
-        .info-container.invite-button {
-            color: #27082B;
-        }
+.header-content:hover ul li {
+    color: #67c4a5;
+}
 
-        .info-container.img {
-            display: block;
-            margin: 0 auto;
-        }
+.header-content ul li { 
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.header-content ul li a {
+    display: flex;
+    justify-content: center;
+}
+
+.info-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 20px;
+}
+
+.info-container.invite-button {
+    color: #27082B;
+}
+
+.info-container.img {
+    display: block;
+    margin: 0 auto;
+}

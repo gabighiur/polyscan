@@ -33,21 +33,21 @@ export default {
           image: require('@/assets/null.png'),
           name: 'NullofGehenna',
           designation: 'Blockchain Researcher',
-          comment: '"Polygon Bot has transformed how I manage my crypto investments. It simplifies tracking and provides timely alerts."'
+          comment: 'Polygon Bot has transformed how I manage my crypto investments. It simplifies tracking and provides timely alerts.'
         },
         {
           id: 2,
           image: require('@/assets/popeye.png'),
           name: 'Popeye',
           designation: 'Crypto Enthusiast',
-            comment: '"I love using PolygonScan Web Scraper on my Discord server. It\'s intuitive and integrates well with my workflow, keeping me informed about blockchain data and price changes."'
+            comment: "It's intuitive and integrates well with my workflow, keeping me informed about blockchain data and price changes."
         },
         {
           id: 3,
           image: require('@/assets/filip.png'),
           name: 'The Filip',
           designation: 'Blockchain Researcher',
-            comment: '"My Discord Server can effortlessly monitor rewards and stay consistently informed. It has become an essential tool for me to stay on top of my earnings and make informed investment decisions"'
+            comment: 'It has become an essential tool to stay on top of earnings and make informed investment decisions'
         }
       ]
     };
@@ -58,7 +58,7 @@ export default {
 <style scoped>
     .container {
         margin-top: 80px;
-        font-family: Montserrat;
+        font-family: 'Montserrat', sans-serif;
         font-weight: 500;
     }
 
@@ -82,84 +82,92 @@ export default {
         background-color: inherit;
     }
 
-        .card .face {
-            position: absolute;
-            color: #fff;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-            border-radius: 15px;
-            background: rgba(255, 255, 255, 0.06);
-            transform-style: preserve-3d;
-            transition: 0.5s;
-            backface-visibility: hidden;
-            border-top: 1px solid #ddd;
-            border-left: 1px solid #ddd;
-        }
+    .card .face {
+        position: absolute;
+        color: #fff;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        border-radius: 15px;
+        background: rgba(255, 255, 255, 0.06);
+        transform-style: preserve-3d;
+        transition: 0.5s;
+        backface-visibility: hidden;
+        border-top: 1px solid #ddd;
+        border-left: 1px solid #ddd;
+    }
 
-            .card .face.front-face,
-            .card .face.back-face {
-                position: absolute;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-            }
+    .card .face.front-face,
+    .card .face.back-face {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 
-                .card .face.front-face .profile {
-                    width: 150px;
-                    height: 150px;
-                    border-radius: 50%;
-                    object-fit: cover;
-                }
+    .card .face.front-face .profile {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
 
-                .card .face.front-face .name {
-                    letter-spacing: 2px;
-                    margin: 10px;
-                }
+    .card .face.front-face .name {
+        letter-spacing: 2px;
+        margin: 10px;
+        font-size: 20px;
+        text-transform: uppercase;
+        margin-top: 15px;
+    }
 
-                .card .face.front-face .designation {
-                    font-size: 0.8rem;
-                    color: #ddd;
-                    letter-spacing: 0.8px;
-                }
+    .card .face.front-face .designation {
+        font-size: 0.8rem;
+        color: #ddd;
+        letter-spacing: 0.8px;
+    }
 
-        .card:hover .face.front-face {
-            transform: rotateY(180deg);
-        }
+    .card:hover .face.front-face {
+        transform: rotateY(180deg);
+    }
 
-        .card .face.back-face {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.06);
-            transform: rotateY(180deg);
-            padding: 20px 30px;
-            text-align: center;
-            user-select: none;
-        }
+    .card .face.back-face {
+        position: absolute;
+        background: rgba(255, 255, 255, 0.06);
+        transform: rotateY(180deg);
+        padding: 20px 30px;
+        text-align: center;
+        user-select: none;
+    }
 
-            .card .face.back-face .fa-quote-left {
-                position: absolute;
-                top: 25px;
-                left: 25px;
-                font-size: 1.2rem;
-            }
+    .card .face.back-face .fa-quote-left {
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        font-size: 1.2rem;
+    }
 
-            .card .face.back-face .fa-quote-right {
-                position: absolute;
-                bottom: 35px;
-                right: 25px;
-                font-size: 1.2rem;
-            }
+    .card .face.back-face .fa-quote-right {
+        position: absolute;
+        bottom: 35px;
+        right: 25px;
+        font-size: 1.2rem;
+    }
 
-            .card .back-face{
-                width: 80%;
-                height: 80%;
-            }
+    .card .back-face{
+        width: 80%;
+        height: 80%;
+    }
 
-        .card:hover .face.back-face {
-            transform: rotateY(360deg);
-        }
+    .card .back-face .testimonial {
+        font-size: 22px;
+        text-align: left;
+    }
+
+    .card:hover .face.back-face {
+        transform: rotateY(360deg);
+    }
 
    
 
