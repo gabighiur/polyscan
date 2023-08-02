@@ -74,7 +74,7 @@
         position: fixed;
         font-family: 'Bebas', sans-serif;
         font-size: 26px;
-        width: 100%;
+        width: 98%;
         height: 65px;
         padding: 0.2rem;
         display: flex;

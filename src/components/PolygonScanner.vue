@@ -94,8 +94,9 @@
                 headerContentItems: [
                     "Access all commands",
                     "TA signal for trading",
-                    "Algorithm based on MACD, RSI, ADX and BB",
-                    "Chart with 3 subplots included",
+                    "Volume and Current Price",
+                    "VOL, EMA, MACD, RSI, ADX and BB",
+                    "Chart with 4 subplots included",
                     "Sending signal every hour",
                     "88% accurate",
                     "Only 100 spots",
