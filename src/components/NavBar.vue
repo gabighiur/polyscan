@@ -74,7 +74,7 @@
         position: fixed;
         font-family: 'Bebas', sans-serif;
         font-size: 26px;
-        width: 98%;
+        width: 100%;
         height: 65px;
         padding: 0.2rem;
         display: flex;
@@ -252,7 +252,7 @@
         .navbar {
             position: sticky;
             height: 50px;
-            
+            width: 98%;
         }
 
         .logo-mobile {

@@ -42,14 +42,14 @@
         </section>
 
         <section class="header-content">
-            <h2>{{ coffee }}</h2> 
             <div class="info-container">
                 <img :src="rage" alt="rage" />
             </div>
+            <h2>{{ coffee }}</h2> 
             <ul>
-                <li v-for="(item, index) in headerContentItems" :key="index">{{ item }}</li>
-                <li> <a :href="coffeeLink"><img :src="coffeeImg" /></a> </li>
+                <li v-for="(item, index) in headerContentItems" :key="index">{{ item }}</li> 
             </ul> 
+            <a :href="coffeeLink"><img :src="coffeeImg" /></a>
         </section>
 
         <CardComponent />
@@ -88,7 +88,7 @@
                 icon: icon,
                 rage: rage, 
                 headerText: "Hi!\nI'm PolygonScan\nScrapper Bot",
-                coffee: "PolygonScan Subscription Package",
+                coffee: "Subscription Package",
                 coffeeImg: "https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=bezmir&button_colour=FFDD00&font_colour=000000&font_family=Poppins&outline_colour=000000&coffee_colour=ffffff",
                 coffeeLink: "https://www.buymeacoffee.com/bezmir",
                 headerContentItems: [

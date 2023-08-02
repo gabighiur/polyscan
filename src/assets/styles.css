@@ -182,19 +182,22 @@ section .container {
         height: calc(100vh - 90px);
     }
 
-    .header-content {
-        padding: 40px;
-        margin: 40px;
-        
+    header {
+        height: unset;
+    }
+
+    .header-content { 
+        max-width: 90%;
         margin-bottom: 0px!important;
     }
 
     .header-content h2 {
         text-align: center;
+        font-size: 30px;
     }
 
     section {
-        min-height: calc(100vh - 70px);
+        min-height: calc(100vh - 380px);
         margin-left: auto;
         margin-right: auto;
         max-width: 70%;
@@ -322,28 +325,25 @@ button.invite-button {
 } 
 
 .header-content ul {
-    background: #67c4a5;
-    color: #122;
+    border: 2px solid #67c4a5;
+    color: #fff;
     border-radius: 10px;
-    padding: 20px 30px;
-    font-size: 21px;
-    list-style: none;
-    text-transform: uppercase;
+    padding: 20px 30px 20px 40px;
+    font-size: 21px; 
     transition: all .3s;
     margin-bottom: 40px;
 }
 
-.header-content:hover ul {
-    background: rgb(119, 16, 133);
+/* .header-content:hover ul {
+    //background: rgb(119, 16, 133);
 }
 
 .header-content:hover ul li {
     color: #67c4a5;
-}
+} */
 
 .header-content ul li { 
     margin-bottom: 20px;
-    text-align: center;
 }
 
 .header-content ul li a {
