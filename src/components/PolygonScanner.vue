@@ -133,10 +133,10 @@
                 return window.innerWidth <= 844;
             },
             rootMargin() {
-                return this.isMobile ? '0px' : '10px';
+                return this.isMobile ? '0px 0px -50% 0px' : '10px';
             },
             threshold() {
-                return this.isMobile ? 0.1 : 0.01;
+                return this.isMobile ? 0.5 : 0.01;
             },
         },
         mounted() {
@@ -180,6 +180,7 @@
         methods: {
             handleScrollAnimations(entries) {
                 entries.forEach((entry) => {
+                    console.log(entry.intersectionRatio); // Debugging line
                     if (entry.isIntersecting) {
                         entry.target.classList.add("visible");
                     } else {
