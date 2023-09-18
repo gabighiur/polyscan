@@ -57,8 +57,7 @@
             <h2>{{ coffee }}</h2>
             <ul>
                 <li v-for="(item, index) in headerContentItems" :key="index">{{ item }}</li>
-            </ul>
-            <a :href="coffeeLink"><img :src="coffeeImg"/></a>
+            </ul> 
         </section>
 
         <CardComponent/>
@@ -66,12 +65,13 @@
         <footer class="footer">
             <div class="footer-content">
                 <img class="footer-logo" :src="FLogo" alt="Logo"/>
-                <p>Powered By
-                    <a href="https://ovoono.studio/" target="_blank">OvoOno Studio</a>
-                </p>
+                <p>Powered By  <a href="https://ovoono.studio/" target="_blank">OvoOno Studio</a> </p>
+                <p> <!-- Trigger Modal Button --> <button @click="isModalVisible = true">Privacy & Policy</button> </p>
             </div>
         </footer>
     </div>
+    <!-- Privacy Policy Modal -->
+    <PrivacyPolicyModal :showModal="isModalVisible" @close-modal="isModalVisible = false"></PrivacyPolicyModal>
 </template>
 
 <script>
@@ -83,13 +83,15 @@
     import icon from "@/assets/logo.png";
     import rage from "@/assets/jaluzele/rageEmote.png";
     import CustomListItem from "@/components/CustomListItem.vue";
+    import PrivacyPolicyModal from "@/components/PrivacyPolicyModal.vue";
 
     export default {
         name: "App",
         components: {
             NavBar,
             CardComponent,
-            CustomListItem
+            CustomListItem,
+            PrivacyPolicyModal
         },
         data() {
             return {
@@ -98,8 +100,9 @@
                 vid: vid,
                 icon: icon,
                 rage: rage,
+                isModalVisible: false,
                 headerText: "Hi!\nI'm PolygonScan\nScrapper Bot",
-                coffee: "Subscription Package",
+                coffee: "Premium features",
                 coffeeImg: "https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=bezm" +
                         "ir&button_colour=FFDD00&font_colour=000000&font_family=Poppins&outline_colour=" +
                         "000000&coffee_colour=ffffff",
@@ -113,7 +116,7 @@
                     "Sending signal every hour",
                     "88% accurate",
                     "Only 100 spots",
-                    "50$/monthly or 280$ annual payment"
+                    "0.088 ETH one-time payment for life time access!"
                 ],
                 section1Title: "Discover the Exclusive Features",
                 section1Texts: [
@@ -126,16 +129,14 @@
                         link: "https://discord.com/api/oauth2/authorize?client_id=1041454438595965049&permiss" +
                                 "ions=2147534848&scope=bot%20applications.commands"
                     }, {
-                        text: "Utilize the ps- prefix for commands. For example, try ps-help",
+                        text: "Use in-app commands such as /help to display help message",
                         link: null
                     }, {
                         text: "Enjoy the PolygonScan Scrapper features and consider supporting it by voting.",
                         link: null
                     }
                 ],
-                botDescription: "I can access blockchain data, monitor wallets, and receive real-time alerts. U" +
-                        "pgrade for advanced features like exporting data, increased transaction limits" +
-                        " and receive Crypto Signals for daily trading."
+                botDescription: "A Discord bot that calculates algorithmically trading strategy to generate Crypto Signal! Bot also uses the Polygonscan API, Disnake library to provide access to various blockchain data and functionality, such as querying the state of a contract, retrieving transaction history, or submitting transactions."
             };
         },
 
